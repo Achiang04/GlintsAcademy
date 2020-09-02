@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jecky Hindrawan</title>
+</head>
+<body>
+    <div id="stepsId">
+        <ol><li id="li1"><b>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</b></li>
+            <li id="li2"><b>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</b></li>
+            <li id="li3"><b>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</b></li></ol>
+      </div>
+    <script>
+        let colors = ["blue", "yellow", "red", "green", "orange"]
+            let currentColor = 0
+            let lis = document.querySelectorAll("#stepsId li")
+
+            function changeColor() {
+            --currentColor
+            if (currentColor < 0)
+                currentColor = colors.length - 1;   
+                for (let i = 0; i < lis.length; i++) {
+                lis[i].style.color = colors[(currentColor + i) % colors.length]
+                }
+            }
+        setInterval(changeColor, 300)
+    </script>
+    <button onclick="document.body.style.backgroundColor = 'green';">Green</button>
+    <button onclick="document.body.style.backgroundColor = 'blue';">Blue</button>
+    <button onclick="document.body.style.backgroundColor = 'red';">Red</button>
+    <button onclick="document.body.style.backgroundColor = 'yellow';">Yellow</button>
+    <button onclick="document.body.style.backgroundColor = 'pink';">Pink</button>
+    <button onclick="document.body.style.backgroundColor = 'black';">Black</button>
+    <button onclick="document.body.style.backgroundColor = 'white';">White</button>
+</body>
+</html>

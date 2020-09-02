@@ -1,2 +1,0 @@
-# GlintsAcademy
-Batch #7
