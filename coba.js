@@ -20,3 +20,5 @@ let colors = ["blue", "yellow", "red", "green", "orange"]
 let currentColor = -1;
 currentColor = colors.length - 1;  
 console.log(currentColor)
+
+console.log(a + b);
