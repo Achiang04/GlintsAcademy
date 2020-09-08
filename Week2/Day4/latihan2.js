@@ -43,8 +43,7 @@ function dataStudents(inputan) {
 
     let pisahan = inputan[3].split("/");
     if (pisahan[1] == 05){
-        pisahan[1] = "mei";
-        
+        pisahan[1] = "mei";   
     }
     console.log(pisahan);
 
