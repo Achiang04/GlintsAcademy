@@ -1,0 +1,12 @@
+input {
+    width: 50px;
+    display: block;
+    margin: 6px;
+}
+
+.input-wrapper {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    transform: translateX(-50%) translateY(-50%);
+}
