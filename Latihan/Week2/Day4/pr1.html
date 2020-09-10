@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        var nilai1 = prompt("Masukin nilai pertama: ");
+        var nilai2 = prompt("Masukin nilai kedua: ");
+        var operator = prompt("Masukkan operator (+,-,*,/,%): ")
+        nilai1 = parseInt(nilai1)
+        nilai2 = parseInt(nilai2)
+
+        switch(operator){
+            case "+":
+                alert(nilai1 + nilai2);
+                break;
+            case "-":
+                alert(nilai1 - nilai2);
+                break;
+            case "*":
+                alert(nilai1 * nilai2);
+                break;
+            case "/":
+                alert(nilai1 / nilai2);
+                break;
+            case "%":
+                alert(nilai1 % nilai2);
+                break;
+            default:
+                alert("operator tidak invalid");
+        }
+    </script>
+</body>
+</html>
