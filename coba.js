@@ -26,9 +26,9 @@
 // console.log("tes");
 
 let tujuan = [];
-let awal = ["domba","kol","serigala"]
+let awal = ["domba", "kol", "serigala"]
 
-for (let i = 0; i < awal.length; i++){
+for (let i = 0; i < awal.length; i++) {
     tujuan.push(awal[i]);
     console.log(tujuan)
     // if (awal[i] === "domba" && awal[i + 1] === "kol"){
@@ -37,3 +37,5 @@ for (let i = 0; i < awal.length; i++){
     // }
     console.log(tujuan)
 }
+
+// test balikkan week2
