@@ -88,6 +88,9 @@ function Clock({ template }) {
   clock.start();
   class Clock {
       // Code di sini
+      constructor(output){
+        
+      }
   }
   
   var clock = new Clock({template: 'h:m:s'});
