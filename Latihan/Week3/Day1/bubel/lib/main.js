@@ -1,5 +1,7 @@
 'use strict'
-import {test} from './module'
+import {
+  test
+} from './module'
 test()
 
 const golden = () => {
@@ -7,13 +9,14 @@ const golden = () => {
 }
 golden()
 
-const newFunction = function literal(firstName, lastName){
+const newFunction = function literal(firstName, lastName) {
   return {
-    firstName: firstName,
-    lastName: lastName,
-    fullName: function(){
-      console.log(`${firstName} ${lastName}`)
-      return 
+    firstName,
+    lastName,
+    fullName() {
+      // console.log(`${firstName} ${lastName}`)
+      console.log(firstName + " " + lastName)
+      return
     }
   }
 }
@@ -26,7 +29,13 @@ newFunction("William", "Imoh").fullName()
 //   occupation: "Deve-wizard Avocado",
 //   spell: "Vimulus Renderus!!!"
 // }
-// newObject (firstName,lastName,destination,occupation,spell);
+// const {
+//   firstName,
+//   lastName,
+//   destination,
+//   occupation,
+//   spell
+// } = newObject;
 // console.log(newObject)
 
 
