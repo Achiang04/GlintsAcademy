@@ -26,4 +26,3 @@ const calcu = (nilai1, nilai2, operator) => {
             alert("operator tidak invalid");
     }
 }
-calcu(nilai)
