@@ -22,22 +22,21 @@ const newFunction = function literal(firstName, lastName) {
 }
 newFunction("William", "Imoh").fullName()
 
-// const newObject = {
-//   firstName: "Harry",
-//   lastName: "Potter Holt",
-//   destination: "Hogwarts React Conf",
-//   occupation: "Deve-wizard Avocado",
-//   spell: "Vimulus Renderus!!!"
-// }
-// const {
-//   firstName,
-//   lastName,
-//   destination,
-//   occupation,
-//   spell
-// } = newObject;
-// console.log(newObject)
-
+const orang = {
+  firstName: "Harry",
+  lastName: "Potter Holt",
+  destination: "Hogwarts React Conf",
+  occupation: "Deve-wizard Avocado",
+  spell: "Vimulus Renderus!!!"
+}
+const {
+  firstName,
+  lastName,
+  destination,
+  occupation,
+  spell
+} = orang;
+console.log(firstName, lastName, destination, occupation, spell);
 
 const west = ["Will", "Chris", "Sam", "Holly"]
 const east = ["Gill", "Brian", "Noel", "Maggie"]
