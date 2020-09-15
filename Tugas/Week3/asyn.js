@@ -34,7 +34,7 @@ const requestWait = async () => {
   try {
     let response = await fetch("https://api.github.com/repos/request/request");
     let json = await response.json();
-    // console.log(json);
+    console.log(json);
     // return json.stargazers_count;
     return json.name;
   } catch (error) {
