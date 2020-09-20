@@ -1,62 +1,70 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Button } from "./componen/button";
-import { Input } from "./componen/input";
-import { ClearButton } from "./componen/clearButton";
-// import * as math from "math.js";
+import ResultComponent from "./components/ResultComponent";
+import KeyPadComponent from "./components/KeyPadComponent";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      input: "",
+      result: "",
     };
   }
 
-  addToInput = (val) => {
-    this.setState({ input: this.state.input + val });
+  onClick = (button) => {
+    if (button === "=") {
+      this.calculate();
+    } else if (button === "C") {
+      this.reset();
+    } else if (button === "CE") {
+      this.backspace();
+    } else {
+      this.setState({
+        result: this.state.result + button,
+      });
+    }
   };
 
-  handleEqual = () => {
-    // this.setState({ input: math.eval(this.state.input) });
-    this.setState({ input: eval(this.state.input) });
+  calculate = () => {
+    let checkResult = "";
+    // if (this.state.result.includes("--")) {
+    //   checkResult = this.state.result.replace("--", "+");
+    // } else {
+    checkResult = this.state.result;
+    // }
+
+    try {
+      this.setState({
+        // eslint-disable-next-line
+        result: eval(checkResult),
+      });
+    } catch (e) {
+      this.setState({
+        result: "error",
+      });
+    }
+  };
+
+  reset = () => {
+    this.setState({
+      result: "",
+    });
+  };
+
+  backspace = () => {
+    this.setState({
+      result: this.state.result.slice(0, -1),
+    });
   };
 
   render() {
     return (
-      <div className="app">
-        <div className="calc-wrapper">
-          <Input input={this.state.input} />
-          <div className="row">
-            <Button handleClick={this.addToInput}>7</Button>
-            <Button handleClick={this.addToInput}>8</Button>
-            <Button handleClick={this.addToInput}>9</Button>
-            <Button handleClick={this.addToInput}>/</Button>
-          </div>
-          <div className="row">
-            <Button handleClick={this.addToInput}>4</Button>
-            <Button handleClick={this.addToInput}>5</Button>
-            <Button handleClick={this.addToInput}>6</Button>
-            <Button handleClick={this.addToInput}>X</Button>
-          </div>
-          <div className="row">
-            <Button handleClick={this.addToInput}>1</Button>
-            <Button handleClick={this.addToInput}>2</Button>
-            <Button handleClick={this.addToInput}>3</Button>
-            <Button handleClick={this.addToInput}>+</Button>
-          </div>
-          <div className="row">
-            <Button handleClick={this.addToInput}>.</Button>
-            <Button handleClick={this.addToInput}>0</Button>
-            <Button handleClick={() => this.handleEqual()}>=</Button>
-            <Button handleClick={this.addToInput}>-</Button>
-          </div>
-          <div className="row">
-            <ClearButton handleClear={() => this.setState({ input: "" })}>
-              Clear
-            </ClearButton>
-          </div>
+      <div>
+        <div className="calculator-body">
+          <h1>Calculator</h1>
+          <ResultComponent result={this.state.result} />
+          <KeyPadComponent onClick={this.onClick} />
         </div>
       </div>
     );

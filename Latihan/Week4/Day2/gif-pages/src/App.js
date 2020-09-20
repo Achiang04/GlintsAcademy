@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Componen from "./componen/componen";
+import "./App.css";
 export default class Gifparty extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +35,7 @@ export default class Gifparty extends Component {
 
     return (
       <div>
-        <h1>Giphy Party</h1>
+        <h1 className="kepala">Giphy Party</h1>
         <Componen handleSubmit={this.updateGif} remove={this.remove} />
         {gifs}
       </div>

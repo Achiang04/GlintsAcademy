@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../App.css";
 
 export default class componen extends Component {
   constructor(props) {
@@ -45,7 +46,7 @@ export default class componen extends Component {
 
   render() {
     return (
-      <div>
+      <div className="center">
         <form onSubmit={this.getInput}>
           <input
             type="text"
