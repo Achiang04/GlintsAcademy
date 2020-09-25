@@ -28,15 +28,10 @@ class App extends Component {
 
   calculate = () => {
     let checkResult = "";
-    // if (this.state.result.includes("--")) {
-    //   checkResult = this.state.result.replace("--", "+");
-    // } else {
     checkResult = this.state.result;
-    // }
 
     try {
       this.setState({
-        // eslint-disable-next-line
         result: eval(checkResult),
       });
     } catch (e) {

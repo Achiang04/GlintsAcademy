@@ -36,8 +36,6 @@ export default class App extends Component {
         accessor: "age",
       },
     ];
-    return (
-      <ReactTable stlye={table} data={this.state.users} columns={columns} />
-    );
+    return <ReactTable data={this.state.users} columns={columns} />;
   }
 }
