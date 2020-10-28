@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-export function PageEdit() {
+export function EditPages() {
   let loc = useLocation();
   const [todo, setTodo] = useState(loc.state.passedTodo);
 

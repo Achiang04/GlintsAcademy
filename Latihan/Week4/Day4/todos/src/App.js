@@ -1,28 +1,30 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./App.css";
-
-import { PageHome } from "./component/page_home";
-import { PageAdd } from "./component/page_add";
-import { PageEdit } from "./component/page_edit";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { HomePages } from "./pages/homepages";
+import { EditPages } from "./pages/editpages";
+import { AppPages } from "./pages/apppages";
 
 function App() {
   return (
-    <div className="">
-      <Switch>
-        <Route exact path="/">
-          <PageHome />
-        </Route>
-        <Route exact path="/">
-          <PageHome />
-        </Route>
-        <Route path="/todo/add">
-          <PageAdd />
-        </Route>
-        <Route path="/todo/edit">
-          <PageEdit />
-        </Route>
-      </Switch>
+    <div className="App">
+      <Router>
+        <div className="">
+          <Switch>
+            <Route exact path="/">
+              <HomePages />
+            </Route>
+            <Route path="/add">
+              <AppPages />
+            </Route>
+            <Route path="/edit">
+              <EditPages />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
+
+export default App;

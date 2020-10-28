@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export function PageAdd() {
+export function AppPages() {
   const [title, setTitle] = useState("");
 
   const titleChangeListener = (e) => {
@@ -12,7 +12,7 @@ export function PageAdd() {
     const obj = {
       title: title,
     };
-    const resp = await fetch("https://btm-rn.herokuapp.com/api/v1/todo", {
+    const Respons = await fetch("https://btm-rn.herokuapp.com/api/v1/todo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,8 +22,8 @@ export function PageAdd() {
       .then((res) => res.json())
       .catch((err) => console.log(err));
 
-    console.log(resp);
-    if (resp.results) {
+    console.log(Respons);
+    if (Respons.results) {
       window.location.href = "/";
     } else {
       console.log("Failed when create");
@@ -32,7 +32,7 @@ export function PageAdd() {
 
   return (
     <div>
-      <nav className="navbar navbar-light bg-primary">
+      <nav className="navbar navbar-light bg-info">
         <Link className="navbar-brand" to="/">
           <i className="fa fa-arrow-left content_white"></i>
         </Link>
@@ -51,9 +51,9 @@ export function PageAdd() {
             className="mt-4"
             onClick={() => createTodo()}
             type="submit"
-            className="btn btn-primary btn-block"
+            className="btn btn-success btn-block"
           >
-            Simpan
+            Save
           </button>
         </div>
       </div>

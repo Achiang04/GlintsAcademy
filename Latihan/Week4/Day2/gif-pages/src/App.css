@@ -9,3 +9,10 @@
 .inputan {
   margin-left: 100px;
 }
+
+.barisgif {
+  flex-direction: row;
+  margin-top: 20px;
+  margin-left: 20px;
+  text-align: center;
+}
